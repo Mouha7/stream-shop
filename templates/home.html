@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Bienvenue Sur Stream Shop</h1>
+    <h2 class="title">Derniers films</h2>
+    <ul class="main-card">
+        {% for movie in latest_movies %}
+            <a href="{% url "movie_detail" movie.pk %}">
+                <li class="img-card"><img src="{{ movie.poster.url }}" alt="{{ movie.title }}"></li>
+                <li class="title-card">{{ movie.title }}</li>
+                <li>Durée: {{ movie.duration }}</li>
+                <li class="gender-card"><span>{{ movie.gender.name }}</span></li>
+            </a>
+        {% endfor %}
+    </ul>
+    <h2 class="title">Dernières séries</h2>
+    <ul class="main-card">
+        {% for serie in latest_series %}
+            <a href="{% url "serie_detail" serie.pk %}">
+                <li class="img-card"><img src="{{ serie.poster.url }}" alt="{{ serie.title }}"></li>
+                <li class="title-card">{{ serie.title }}</li>
+                <li>Nbr Episode: {{ serie.number_of_seasons }}</li>
+                <li class="gender-card"><span>{{ serie.gender.name }}</span></li>
+            </a>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card-banner"><img src="{{ serie_detail_by_id.poster.url }}" alt="{{ serie_detail_by_id.title }}"></div>
+<h2 class="title">Série / {{ serie_detail_by_id.title }}</h2>
+<div class="card-details">
+    <img src="{{ serie_detail_by_id.poster.url }}" alt="{{ serie_detail_by_id.title }}">
+    <div class="card-description">
+        <div>
+            <h3>Titre</h3>
+            <p>{{ serie_detail_by_id.title }}</p>
+        </div>
+        <div>
+            <h3>Date de sortie</h3>
+            <p>{{ serie_detail_by_id.release_date }}</p>
+        </div>
+        <div>
+            <h3>Nbr saison</h3>
+            <p>{{ serie_detail_by_id.number_of_seasons }}</p>
+        </div>
+        <div>
+            <h3>Genre</h3>
+            <p>{{ serie_detail_by_id.gender }}</p>
+        </div>
+        <div>
+            <h3>Description</h3>
+            <p class="description">{{ serie_detail_by_id.description }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="card-banner"><img src="{% static "images/banner-2.jpg" %}" alt="Banner"></div>
+    {% if movies or series %}
+        {% if movies %}
+        <h2 class="title">Films</h2>
+        <ul class="main-card">
+            {% for movie in movies %}
+                <a href="{% url "movie_detail" movie.pk %}">
+                    <li class="img-card"><img src="{{ movie.poster.url }}" alt="{{ movie.title }}"></li>
+                    <li class="title-card">{{ movie.title }}</li>
+                    <li>Durée: {{ movie.duration }}</li>
+                    <li class="gender-card"><span>{{ movie.gender.name }}</span></li>
+                </a>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if series %}
+        <h2 class="title">Séries</h2>
+        <ul class="main-card">
+            {% for serie in series %}
+                <a href="{% url "serie_detail" serie.pk %}">
+                    <li class="img-card"><img src="{{ serie.poster.url }}" alt="{{ serie.title }}"></li>
+                    <li class="title-card">{{ serie.title }}</li>
+                    <li>Nbr Episode: {{ serie.number_of_seasons }}</li>
+                    <li class="gender-card"><span>{{ serie.gender.name }}</span></li>
+                </a>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% else %}
+        <h2 class="title">Désolé nous n'avons pas encore de Séries ni Film pour ce Gendre.</h2>
+    {% endif %}
+{% endblock %}

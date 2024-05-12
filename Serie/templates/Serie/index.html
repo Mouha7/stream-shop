@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card-banner"><img src="{% static "images/banner-1.jpeg" %}" alt="Banner"></div>
+<h2 class="title">Séries</h2>
+<ul class="main-card">
+    {% for serie in series %}
+        <a href="{% url "serie_detail" serie.pk %}">
+            <li class="img-card"><img src="{{ serie.poster.url }}" alt="{{ serie.title }}"></li>
+            <li class="title-card">{{ serie.title }}</li>
+            <li>Nbr Episode: {{ serie.number_of_seasons }}</li>
+            <li class="gender-card"><span>{{ serie.gender.name }}</span></li>
+        </a>
+    {% endfor %}
+</ul>
+{% endblock %}

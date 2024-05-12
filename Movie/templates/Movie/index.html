@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card-banner"><img src="{% static "images/banner-2.jpg" %}" alt="Banner"></div>
+<h2 class="title">Films</h2>
+<ul class="main-card">
+    {% for movie in movies %}
+        <a href="{% url "movie_detail" movie.pk %}">
+            <li class="img-card"><img src="{{ movie.poster.url }}" alt="{{ movie.title }}"></li>
+            <li class="title-card">{{ movie.title }}</li>
+            <li>Durée: {{ movie.duration }}</li>
+            <li class="gender-card"><span>{{ movie.gender.name }}</span></li>
+        </a>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Stream Shop</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url "home" %}"><img src="{% static 'images/logo.png' %}" alt="Logo"></a>
+        <ul>
+            <li><a href="{% url "home" %}">Accueil</a></li>
+            <li><a href="{% url "movie_list" %}">Films</a></li>
+            <li><a href="{% url "serie_list" %}">Séries</a></li>
+            <li>
+                <a class="sub">Genres</a>
+                <ul class="sub-gender">
+                    {% for gender in genders %}
+                        <li><a href="{% url "gender_list" gender.pk %}">{{ gender.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    {% block content %}{% endblock  %}
+    <footer>&copy; CESAG 2023-2024</footer>
+</body>
+</html>

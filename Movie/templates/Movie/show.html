@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card-banner"><img src="{{ movie_detail_by_id.poster.url }}" alt="{{ movie_detail_by_id.title }}"></div>
+<h2 class="title">Film / {{ movie_detail_by_id.title }}</h2>
+<div class="card-details">
+    <img src="{{ movie_detail_by_id.poster.url }}" alt="{{ movie_detail_by_id.title }}">
+    <div class="card-description">
+        <div>
+            <h3>Titre</h3>
+            <p>{{ movie_detail_by_id.title }}</p>
+        </div>
+        <div>
+            <h3>Date de sortie</h3>
+            <p>{{ movie_detail_by_id.release_date }}</p>
+        </div>
+        <div>
+            <h3 id="no_space">Durée du film</h3>
+            <p>{{ movie_detail_by_id.duration }}</p>
+        </div>
+        <div>
+            <h3>Genre</h3>
+            <p>{{ movie_detail_by_id.gender }}</p>
+        </div>
+        <div>
+            <h3>Description</h3>
+            <p class="description">{{ movie_detail_by_id.description }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
