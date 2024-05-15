@@ -33,7 +33,7 @@ def serie_edit(request, id):
             return redirect('serie_list')
     else:
         form = SerieForm(instance=serie)
-    return render(request, 'serie/update.html', {'form': form})
+    return render(request, 'serie/update.html', {'form': form, 'serie': serie})
 
 def serie_delete(request, id):
     serie_delete = get_object_or_404(Serie, pk=id)

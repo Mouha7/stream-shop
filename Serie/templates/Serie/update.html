@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block context %}
+<h1>Bonjour</h1>
+<div class="card-banner"><img src="{{ serie.poster.url }}" alt="{{ serie.title }}"></div>
+<h2 class="title">Serie / {{ serie.title }}</h2>
+<div class="card-details">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enregistrer les modifications</button>
+    </form>
+</div>
+{% endblock %}

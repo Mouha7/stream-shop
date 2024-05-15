@@ -15,7 +15,7 @@
             <p>{{ serie_detail_by_id.release_date }}</p>
         </div>
         <div>
-            <h3>Nbr saison</h3>
+            <h3 class="nbr-saison">Nbr saison</h3>
             <p>{{ serie_detail_by_id.number_of_seasons }}</p>
         </div>
         <div>
@@ -25,6 +25,9 @@
         <div>
             <h3>Description</h3>
             <p class="description">{{ serie_detail_by_id.description }}</p>
+        </div>
+        <div>
+            <span><a href="{% url "serie_edit" serie_detail_by_id.pk %}">Modifier</a></span>
         </div>
     </div>
 </div>

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block context %}
+
+<div class="card-banner"><img src="{{ movie.poster.url }}" alt="{{ movie.title }}"></div>
+<h2 class="title">Film / {{ movie.title }}</h2>
+<div class="card-details">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enregistrer les modifications</button>
+    </form>
+</div>
+{% endblock %}

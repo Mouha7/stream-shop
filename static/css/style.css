@@ -66,6 +66,10 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+.sub:hover {
+    border: none;
+}
+
 nav ul li:nth-child(4) {
     position: relative;
 }
@@ -88,10 +92,6 @@ nav ul li:nth-child(4) {
     padding: 0 16px;
 }
 
-.sub:hover {
-    border: none;
-}
-
 nav ul li:nth-child(4):hover .sub-gender {
     display: block;
 }
@@ -101,7 +101,6 @@ nav ul li:nth-child(4):hover .sub-gender {
     background-color: #fff;
     display: flex;
     gap: 20px;
-    justify-content: space-between;
     align-items: center;
     padding: 30px;
     border-radius: 10px;
@@ -196,12 +195,12 @@ nav ul li:nth-child(4):hover .sub-gender {
     margin-right: 70px;
 }
 
-.card-description div:nth-child(3) h3 {
-    margin-right: 25px;
+.nbr-saison {
+    margin-right: 25px; 
 }
 
 .card-description div:nth-child(4) h3 {
-    margin-right: 60px;
+    margin-right: 60px; 
 }
 
 .card-description div:nth-child(5) {
@@ -211,12 +210,29 @@ nav ul li:nth-child(4):hover .sub-gender {
     gap: 26px;
 }
 
+.card-description div:nth-child(6) {
+    display: flex;
+    justify-content: flex-end;
+}
+
 #description {
     width: 100%;
     text-overflow: ellipsis;
     height:20px;
     overflow: hidden;
     white-space: nowrap;
+}
+
+.card-description span {
+    padding: 6px 18px;
+    background-color: #947309;
+    color: #fffbf8;
+    border-radius: 10px;
+}
+
+.card-description span a {
+    background-color: #947309;
+    color: #fffbf8;
 }
 
 footer {

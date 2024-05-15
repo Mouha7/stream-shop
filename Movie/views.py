@@ -26,7 +26,7 @@ def movie_add(request):
     return render(request, 'movie/create.html', {'form': form})
 
 def movie_edit(request, id):
-    movie = get_object_or_404(request, pk=id)
+    movie = get_object_or_404(Movie , pk=id)
     if request.method == 'POST':
         form = MovieForm(request.POST, request.FILES, instance=movie)
         if form.is_valid():
@@ -34,7 +34,7 @@ def movie_edit(request, id):
             return redirect('movie_list')
     else:
         form = MovieForm(instance=movie)
-    return render(request, 'movie/update.html', {'form': form})
+    return render(request, 'movie/update.html', {'form': form, 'movie': movie})
 
 def movie_delete(request, id):
     movie_delete = get_object_or_404(Movie, pk=id)

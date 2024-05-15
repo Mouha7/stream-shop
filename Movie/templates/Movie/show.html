@@ -26,6 +26,9 @@
             <h3>Description</h3>
             <p class="description">{{ movie_detail_by_id.description }}</p>
         </div>
+        <div>
+            <span><a href="{% url "movie_edit" movie_detail_by_id.pk %}">Modifier</a></span>
+        </div>
     </div>
 </div>
 {% endblock %}
